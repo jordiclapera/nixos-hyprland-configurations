@@ -1,9 +1,12 @@
 # nixos-hyprland-configurations
-##Table of Contents
+## Table of Contents
+- [NixOS](#nixos)
 - [Best practices](#best-practices)
 - [Directories](#directories)
 - [Hyprland](#hyprland)
 - [License](#license)
+## NixOS
+As I use NixOS the hyprland configurations are specially done to fit with this operating system. It won't be anything that can't be done with NixOS, but who knows if that can be said for the opposite side, working in other distros.
 ## Best practices
 - Always have a copy of your configuration.nix on one of your user's directories, it's easy to copy and paste to `/etc/nixos/configuration.nix` and there aren't that much problems with privileges using git like that.
 - Take care of this repo's configuration languages, as they can create issues with your keyboard.
