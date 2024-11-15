@@ -1,10 +1,24 @@
 # nixos-hyprland-configurations
 ## Table of Contents
+- [Who am I](#who-am-i)
+- [Objectives](#objectives)
 - [NixOS](#nixos)
 - [Best practices](#best-practices)
 - [Directories](#directories)
 - [Hyprland](#hyprland)
 - [License](#license)
+## Who am I
+I'm a newbie in Linux (since September 2024), using NixOS with unstable channel. That means I make errors, plenty of them, and that the configs I share here may not work or may have unexpected behaviour at stable versions. And as I am catalan, their layout is catalan, so make sure to change it (in case you haven't got spanish keyboard) in case you want to copy and paste a configuration from here.
+Also I'd recomend you to have at least two users, or try it in a vm, or else be able to use another WM or a DE in case you update the hyprland configuration (best way is using vm first). That way you won't have much to lose.
+Well, it's on your own risk, so make informed decisions, and I hope you can learn and experience with my configurations, if that's what you want.
+## Objectives
+When I created this repo I had some things in mind:
+- I want to have a public repo that lets me get my configs easily without many restrictions, and by the way let it open to all people
+- Learn by doing, gaining experience with Git and GitHub, and having a good and open backup that lets me be able to work good with hyprland (with it's own benefits as a tilling window manager)
+- I also wanted to implement scripts to save the configurations, but that might not end working as I expected but somehow they work now
+Later I thinked of doing a weird thing that probably won't work, but dreams are free and it only makes me gain scripting experience:
+- Create an script that lets switch easily between different configurations
+The problem with this last thing is that I always end at the point that it must be, at least, some manual intervention. And as the git tools are so powerful it may not have sense to create that kind of script so it probably won't happen to exist at the end.
 ## NixOS
 As I use NixOS the hyprland configurations are specially done to fit with this operating system. It won't be anything that can't be done with NixOS, but who knows if that can be said for the opposite side, working in other distros.
 ## Best practices
