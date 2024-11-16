@@ -1,5 +1,5 @@
 # nixos-hyprland-configurations
-I won't add configuration.nix and waybar yet. I'll probably add some configuration stuff soon but I'm considering on including or not the nixos stuff.
+I won't add NixOS configuration yet. Hope you make a good use of the configurations, learn or improve your own ones. And please take in count some features or configuration parts are only for the bleeding-edge versions.
 ## Table of Contents
 - [Who am I](#who-am-i)
 - [Objectives](#objectives)
