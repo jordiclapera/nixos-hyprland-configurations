@@ -17,7 +17,7 @@ echo "Used aliases"
 
 alias vpnc='sudo protonvpn c -f'
 alias vpnd='sudo protonvpn d'
-alias bashshrc='nvim ~/.bashrc'
+alias bashrc='nvim ~/.bashrc'
 alias nixedit='sudo nvim /etc/nixos/configuration.nix'
 alias hyco='nvim ~/.config/hypr/hyprland.conf'
 alias l='ls -l'
