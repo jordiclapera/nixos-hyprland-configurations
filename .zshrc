@@ -63,7 +63,7 @@ rm $hyprland_conf/* -rf; cp $dotfiles/hypr/ $dotfiles/foot/ $dotfiles/waybar/ $d
 deploy-conf() {
 local hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
 local config=$HOME/.config/
-cp $hyprland_conf/hypr $hyprland_conf/foot $hyrpland_conf/waybar $hyprland_conf/nvim $config -R
+cp $hyprland_conf/hypr $hyprland_conf/foot $hyprland_conf/waybar $hyprland_conf/nvim $config -R
 }
 
 # use the journalctl since some point of time XX:XX of the day
