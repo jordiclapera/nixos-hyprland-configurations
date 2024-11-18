@@ -1,5 +1,5 @@
 # nixos-hyprland-configurations
-I won't add NixOS configuration yet. Hope you make a good use of the configurations, learn or improve your own ones. And please take in count some features or configuration parts are only for the bleeding-edge versions.
+I won't add NixOS configuration yet. Hope you make a good use of the configurations, learn or improve your own ones. And please take in count some features or configuration parts are only for the bleeding-edge versions, using NixOS unstable channel.
 ## Table of Contents
 - [Who am I](#who-am-i)
 - [Objectives](#objectives)
@@ -39,16 +39,22 @@ Specially be careful on the
 ```
   part of configuration.nix, as it can make your keyboard layout an spanish one and produce some key errors, so please set it up properly before using `sudo nixos-rebuild switch`, or you can also try the new configuration without switching to it for your security with `sudo nixos-rebuild test`.
 ### Users
-Also, take care of setting the users before the rebuild or it can produce further problems.
+I won't add yet my NixOS configuration but just as a reminder:
+Also, take care of setting the users before the nixos rebuild or it can produce further problems.
 ## Directories
-That said, to use hyprland you don't need to have any `hypr` directory as the deafult is created automatically in order to use hyprland window manager. You may have problems having an hypr without being you the owner and in that case it automatically logs you out, but that won't happen unless you copy and paste it as root from a user to another, or probably other weird scenarios.
 - In `~/.config` it shall be `foot`, `hypr` and `waybar` directories. You can also use `man waybar` to see other places to put it.
 ## Hyprland
-The deafult terminal in hyprland is kitty, but in my config it is foot. I've just left the two deafult binds to logout and open the terminal, `SUPER+M` and `SUPER+Q`. Make sure to visit the official hyprland web as it's the best way to learn using hyprland (I say it from my experience).
+The deafult terminal in hyprland is kitty, but in my config it is foot. I've just left the two deafult binds to logout and open the terminal, `SUPER+M` and `SUPER+Q`. Make sure to visit the official hyprland web as it's the best way to learn using hyprland (I say it from my experience). That means you must have foot installed or you won't be able to use the terminal in hyprland.
 ### Waybar
-You may need to be in `input` extra-group and have the packages `glibcLocales` and `glibcLocalesUtf8` in order to use waybar properly (that's my own experience and that doesn't mean in future this can't change). Not sure if both glibcLocales are needed, but I have both just in case.
+You may need to be in `input` extra-group and have the packages `glibcLocales` and `glibcLocalesUtf8` in order to use waybar properly (that's my own experience and that doesn't mean in future this can't change). Not sure if both glibcLocales are needed, but I have both just in case. Also, in order to see the icons I added some fonts on my configuration.nix:
+```
+  fonts.packages = with pkgs; [
+    font-awesome
+    nerdfonts
+  ];
+```
 ### Hyprland's benefits and weaknesses
-I am currently using KDE toguether with Hyprland to make sure I have benefits from both parts. Hyplands benefits and weak points are:
+I am currently using KDE toguether with Hyprland to make sure I have benefits from both parts. Hyprland's benefits and weak points are:
 #### Hyprland's benefits
 - It's a tiling window manager. That's it, you can't use this feature that good in a DE. But do you really need or is it useful to have multiple windows open? Not always, but sometimes yes.
 - Strongly customizable. Well, you can also customize KDE right? What's the difference? Well, the difference is that you have a file called `hyprland.conf` and there you can change pretty much everything you want, while in KDE it can be a bit more difficult.

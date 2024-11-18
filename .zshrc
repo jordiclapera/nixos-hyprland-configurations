@@ -48,14 +48,14 @@ rea() {
 main-save() {
 local dotfiles=$HOME/.dotfiles/
 local config=$HOME/.config/
-rm $dotfiles/* -rf; cp $config/hypr/ $config/foot/ $HOME/.nixos-de/configuration.nix $config/waybar/ $HOME/.zshrc $HOME/.bashrc $dotfiles -R; cd $dotfiles; git add .; git commit -m $1 -m $2; git push
+rm $dotfiles/* -rf; cp $config/hypr/ $config/foot/ $config/waybar/ $config/nvim/ $HOME/.nixos-de/configuration.nix $HOME/.zshrc $HOME/.bashrc $dotfiles -R; cd $dotfiles; git add .; git commit -m $1 -m $2; git push
 }
 
 # Save the configurations on my public repo, you may not want to use this function
 public-save() {
 local dotfiles=$HOME/.dotfiles/
 local hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/ # Remember: variables can't have - but directories yes
-rm $hyprland_conf/* -rfv; cp $dotfiles/hypr/ $dotfiles/foot/ $dotfiles/.zshrc $dotfiles/.bashrc $HOME/.hyprland-conf/LICENSE $HOME/.hyprland-conf/README.md $hyprland_conf -Rf; cd $hyprland_conf; git add .; git commit -m $1 -m $2; git push
+rm $hyprland_conf/* -rf; cp $dotfiles/hypr/ $dotfiles/foot/ $dotfiles/waybar/ $dotfiles/nvim/ $dotfiles/.zshrc $dotfiles/.bashrc $HOME/.hyprland-conf/LICENSE $HOME/.hyprland-conf/README.md $hyprland_conf -Rf; cd $hyprland_conf; git add .; git commit -m $1 -m $2; git push
 }
 
 # Automate transfering the configuration files to the right places.
@@ -63,7 +63,7 @@ rm $hyprland_conf/* -rfv; cp $dotfiles/hypr/ $dotfiles/foot/ $dotfiles/.zshrc $d
 deploy-conf() {
 local hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
 local config=$HOME/.config/
-cp $hyprland_conf/hypr $hyprland_conf/foot $hyrpland_conf/waybar $config -R
+cp $hyprland_conf/hypr $hyprland_conf/foot $hyrpland_conf/waybar $hyprland_conf/nvim $config -R
 }
 
 # use the journalctl since some point of time XX:XX of the day
