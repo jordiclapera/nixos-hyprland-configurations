@@ -4,8 +4,6 @@
 echo "Hello from $0, $USER"
 echo "'main-save' to copy my configs to $HOME/.dotfiles and save the changes to GitHub"
 echo "'public-save' in order to save the .dotfiles configurations on my public GitHub repositoriy"
-echo "'rea' to read with okular"
-echo "'wri' to edit files with libreoffice"
 echo "'jctls' to use journalctl with the date XX:XX that you want since that point"
 echo "Used aliases"
 
@@ -21,6 +19,8 @@ alias vpnd='sudo protonvpn d'
 alias zshrc='nvim ~/.zshrc'
 alias nixedit='sudo nvim /etc/nixos/configuration.nix'
 alias hyco='nvim ~/.config/hypr/hyprland.conf'
+alias rea='okular'
+alias wri='libreoffice'
 alias l='ls -l'
 alias
 
@@ -39,16 +39,6 @@ PS1="%B[%F{blue}%n@%m %f%~]%F{214}$ %f%b"
 dotfiles=$HOME/.dotfiles/nixconfiguration
 config=$HOME/.config/
 hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
-
-# Edit files with libreoffice
-wri() {
-    nohup libreoffice "$1" > /dev/null 2>&1 & disown
-}
-
-# Read with okular
-rea() {
-    nohup okular "$1" > /dev/null 2>&1 & disown
-}
 
 # Save the configurations on my private repo, you may want to use different paths so edit them as you like in case of using it for yourself
 main-save() {
