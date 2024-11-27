@@ -19,9 +19,8 @@ alias vpnd='sudo protonvpn d'
 alias bashrc='nvim ~/.bashrc'
 alias nixedit='sudo nvim /etc/nixos/configuration.nix'
 alias hyco='nvim ~/.config/hypr/hyprland.conf'
-alias rea='okular'
-alias wri='libreoffice'
-alias l='ls -l'
+alias ls='ls --color=auto'
+alias l='ls -l --color=auto'
 alias
 
 ###########
@@ -39,6 +38,16 @@ alias
 dotfiles=$HOME/.dotfiles/nixconfiguration
 config=$HOME/.config/
 hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
+
+# Run okular in the background
+rea() {
+nohup okular $@ & disown
+}
+
+# Run libreoffice in the background
+wri() {
+nohup libreoffice $@ & disown
+}
 
 # Save the configurations on my private repo, you may want to use different paths so edit them as you like in case of using it for yourself
 main-save() {
@@ -70,3 +79,7 @@ export LANG=en_GB.UTF-8
 
 export EDITOR="nvim"
 export VISUAL="nvim"
+
+# Set custom LS_COLORS, note that : acts as separator
+export LS_COLORS="di=1;34:ln=1;36:so=1;35:pi=1;33:ex=1;32:*.sh=1;31:*.md=1;34:*.pdf=0;33:*.css=0;35:*.html=0;35:*.txt=0;32:*.odt=0;32:*.doc=0;32:*.docx=0;32"
+
