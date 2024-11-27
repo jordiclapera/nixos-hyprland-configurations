@@ -2,23 +2,22 @@
 
 * {
   min-height: 2px;
-  border-radius: 2px;
+  border-radius: 10px;
   font-family: "JetBrains Mono Nerd Font";
   font-size: 10pt;
   font-weight: 700;
   margin-top: 2px;
-  margin-bottom: 2px;
+  margin-bottom: 0px;
   margin-left: 5px;
   margin-right: 5px;
   padding: 0px;
 }
 
 #custom-power {
-    background-color: gray;
+    background-image: radial-gradient(circle, rgb(20, 20, 200) 50%, rgb(255, 255, 255));
     color: white;
-    border-radius: 2px;
+    border-radius: 1000px;
     padding: 0px 5px;
-    border: 2px solid black;
 }
 
 window#waybar {
@@ -54,14 +53,15 @@ button:hover {
 }
 
 #workspaces {
-  background-color: black;
+  background-color: transparent;
   color: white;
 }
 
 #workspaces button {
-  background-color: black;
+  background-color: rgb(20, 20, 200);
   color: white;
-  border: gray solid 2px
+  border: green solid;
+  border-radius: 100px
 }
 
 #workspaces button.active {
@@ -96,11 +96,6 @@ button:hover {
 #mpd {
     padding: 0 10px;
     color: #ffffff;
-}
-
-#workspaces {
-    margin: 0 4px;
-    background-color: black
 }
 
 #window {
@@ -244,11 +239,9 @@ label:focus {
 }
 
 #tray > .passive {
-    -gtk-icon-effect: dim;
 }
 
 #tray > .needs-attention {
-    -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
 

@@ -2,13 +2,18 @@
 
 {
 		"layer": "top",
+
 		"modules-left":  [
         "hyprland/workspaces", 
         "temperature", 
         "battery", 
         "hyprland/window" 
         ],
-        "modules-center": ["custom/power"],
+
+        "modules-center": [
+        "custom/power"
+        ],
+
 		"modules-right": [
         "mpd",
         "idle_inhibitor",
@@ -41,7 +46,7 @@
     "10": "10",
     "11": "11",
     "12": "12"
-		},
+		}
  },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -177,14 +182,6 @@
     "custom/power": {
         "format" : "⏻ ",
 		"tooltip": false,
-		"menu": "on-click",
-		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
-		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate",
-            "poweroff": "poweroff"
-		}
+        "on-click": "wlogout"
     }
 }
