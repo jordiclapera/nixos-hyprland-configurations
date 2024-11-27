@@ -62,7 +62,7 @@ rm $hyprland_conf/* -rf; cp $dotfiles/* $dotfiles/.bashrc $dotfiles/.zshrc $HOME
 # Automate transfering the configuration files to the right places.
 # Note that you may want to change some paths if you use the configs in different directories so take care about it
 deploy-conf() {
-cp $hyprland_conf/hypr $hyprland_conf/foot $hyprland_conf/waybar $hyprland_conf/nvim $hyprland_conf/wofi/ $hyprland_conf/wlogout $config -R; cp $hyprland_conf/.bashrc $hyprland_conf/.zshrc $config -Ri; cp $hyprland_conf/wallpapers/background/* $HOME/Pictures/background; cp $hyprland_conf/wallpapers/hyprlock-background/* $HOME/Pictures/hyprlock-background/; cd
+cp $hyprland_conf/hypr $hyprland_conf/foot $hyprland_conf/waybar $hyprland_conf/nvim $hyprland_conf/wofi/ $hyprland_conf/wlogout $config -R; cp $hyprland_conf/.bashrc $hyprland_conf/.zshrc $HOME/ -i; cp $hyprland_conf/wallpapers/background/* $HOME/Pictures/background; cp $hyprland_conf/wallpapers/hyprlock-background/* $HOME/Pictures/hyprlock-background/; cd
 }
 
 # use the journalctl since some point of time XX:XX of the day
