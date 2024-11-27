@@ -19,8 +19,6 @@ alias vpnd='sudo protonvpn d'
 alias zshrc='nvim ~/.zshrc'
 alias nixedit='sudo nvim /etc/nixos/configuration.nix'
 alias hyco='nvim ~/.config/hypr/hyprland.conf'
-alias rea='okular'
-alias wri='libreoffice'
 alias l='ls -l'
 alias
 
@@ -39,6 +37,16 @@ PS1="%B[%F{blue}%n@%m %f%~]%F{214}$ %f%b"
 dotfiles=$HOME/.dotfiles/nixconfiguration
 config=$HOME/.config/
 hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
+
+# Run okular in the background
+rea() {
+nohup okular $@ & disown
+}
+
+# Run libreoffice in the background
+wri() {
+nohup libreoffice $@ & disown
+}
 
 # Save the configurations on my private repo, you may want to use different paths so edit them as you like in case of using it for yourself
 main-save() {
