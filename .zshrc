@@ -5,14 +5,18 @@ echo "Hello from $0, $USER"
 echo "'main-save' to copy my configs to $HOME/.dotfiles and save the changes to GitHub"
 echo "'public-save' in order to save the .dotfiles configurations on my public GitHub repositoriy"
 echo "'jctls' to use journalctl with the date XX:XX that you want since that point"
-echo "Used aliases"
+echo ""
 
 ###############
 ### ALIASES ###
 ###############
+echo "---"
+echo "Used aliases"
+echo ""
 
-# Remember: aliases don't work good with variables, use functions instead when working with variables
-# Print and set aliases, note that some are for personal use as it's my personal script
+# Remember: aliases don't work good with variables, use functions instead when working with variables, note that some are for personal use as it's my personal script
+
+# Set aliases
 
 alias vpnc='sudo protonvpn c -f'
 alias vpnd='sudo protonvpn d'
@@ -21,7 +25,21 @@ alias nixedit='sudo nvim /etc/nixos/configuration.nix'
 alias hyco='nvim ~/.config/hypr/hyprland.conf'
 alias ls='ls --color=auto'
 alias l='ls -l --color=auto'
+alias cx='cd -' # Toggles to previous directory
+alias cat='cat -n'
+alias shotcut='cd ~/myflake; ./result/bin/shotcut; cd'
+
+# Hyprland aliases
+
+alias keybinds='nvim $config/hypr/keybinds.conf'
+alias layout='nvim $config/hypr/layout.conf'
+alias startup='nvim $config/hypr/startup.conf'
+alias rules='nvim $config/hypr/rules.conf'
+alias window='nvim $config/hypr/window.conf'
+# Print aliases
+
 alias
+echo "---"
 
 ###########
 ### PS1 ###
@@ -39,6 +57,10 @@ dotfiles=$HOME/.dotfiles/nixconfiguration
 config=$HOME/.config/
 hyprland_conf=$HOME/.hyprland-conf/nixos-hyprland-configurations/
 
+hy() {
+nvim $HOME/.config/hypr/$1
+}
+
 # Run okular in the background
 rea() {
 nohup okular $@ & disown
@@ -51,7 +73,7 @@ nohup libreoffice $@ & disown
 
 # Save the configurations on my private repo, you may want to use different paths so edit them as you like in case of using it for yourself
 main-save() {
-rm $dotfiles/* -rf; cd $dotfiles; mkdir wallpapers/background -p; mkdir wallpapers/hyprlock-background; cp $config/hypr/ $config/foot/ $config/waybar/ $config/nvim/ $config/wofi/ $config/wlogout/ $HOME/.nixos-de/configuration.nix $HOME/.zshrc $HOME/.bashrc $dotfiles -R; cp $HOME/Pictures/background/* $dotfiles/wallpapers/background/ -Rf; cp $HOME/Pictures/hyprlock-background/* $dotfiles/wallpapers/hyprlock-background -Rf; git add .; git commit -m $1 -m $2; git push; cd
+rm $dotfiles/* -rf; cd $dotfiles; mkdir wallpapers/background -p; mkdir wallpapers/hyprlock-background; cp $config/hypr/ $config/foot/ $config/waybar/ $config/nvim/ $config/wofi/ $config/wlogout/ $HOME/.nixos-de/configuration.nix $HOME/.zshrc $HOME/.bashrc $HOME/myflake $dotfiles -R; cp $HOME/Pictures/background/* $dotfiles/wallpapers/background/ -Rf; cp $HOME/Pictures/hyprlock-background/* $dotfiles/wallpapers/hyprlock-background -Rf; git add .; git commit -m $1 -m $2; git push; cd
 }
 
 # Save the configurations on my public repo, you may not want to use this function
@@ -62,7 +84,7 @@ rm $hyprland_conf/* -rf; cp $dotfiles/* $dotfiles/.bashrc $dotfiles/.zshrc $HOME
 # Automate transfering the configuration files to the right places.
 # Note that you may want to change some paths if you use the configs in different directories so take care about it
 deploy-conf() {
-cp $hyprland_conf/hypr $hyprland_conf/foot $hyprland_conf/waybar $hyprland_conf/nvim $hyprland_conf/wofi/ $hyprland_conf/wlogout $config -R; cp $hyprland_conf/.bashrc $hyprland_conf/.zshrc $HOME/ -i; cp $hyprland_conf/wallpapers/background/* $HOME/Pictures/background; cp $hyprland_conf/wallpapers/hyprlock-background/* $HOME/Pictures/hyprlock-background/; cd
+cp $hyprland_conf/hypr $hyprland_conf/foot $hyprland_conf/waybar $hyprland_conf/nvim $hyprland_conf/wofi/ $hyprland_conf/wlogout $config -R; cp $hyprland_conf/.bashrc $hyprland_conf/.zshrc $HOME/ -i; cd
 }
 
 # use the journalctl since some point of time XX:XX of the day
@@ -73,6 +95,8 @@ journalctl --since=$1
 ###############
 ### EXPORTS ###
 ###############
+
+export HYPR="$HOME/.config/hypr/"
 
 # Change the language to British English
 export LANG=en_GB.UTF-8

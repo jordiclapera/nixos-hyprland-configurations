@@ -1,20 +1,26 @@
 #!/bin/bash
 
 # Wallpaper's directory
-##wallpaper_dir="$HOME/.config/hypr/background"
+wallpaper_dir="$HOME/Pictures/background/"
 
 sleep 2
 
-swww-daemon & # Activate swww
+# Activate swww
+swww-daemon &
+
+swww clear-cache &
 
 sleep 2
 
 # Find all image files (.jpg, .png) in the directory and pick a random one
-##random_image=$(find "$wallpaper_dir" -type f \( -iname "*.jpg" -o -iname "*.png" \) | shuf -n 1)
+random_image=$(find "$wallpaper_dir" -type f \( -iname "*.jpg" -o -iname "*.png" \) | shuf -n 1)
 
-##swww img "$random_image" # Select the image you want
-swww clear-cache
+swww img "$random_image" &
 
-sleep 1
+# Another way to select only the image you prefer
 
-swww img $HOME/Pictures/background/background.png &
+##swww clear-cache
+
+##sleep 1
+
+##swww img $HOME/Pictures/background/background.png &

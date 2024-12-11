@@ -1,6 +1,8 @@
 # Here you can add which files and directories to ignore
 
 /wallpapers
+/myflake
 configuration.nix
 flake.nix
 flake.lock
+
