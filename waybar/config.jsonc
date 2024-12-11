@@ -114,11 +114,11 @@
         "states": {
             // "good": 95,
             "warning": 30,
-            "critical": 15
+            "critical": 25
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% {icon}",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
