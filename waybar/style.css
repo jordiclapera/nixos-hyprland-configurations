@@ -75,3 +75,14 @@ button:hover {
     background-color: white;
     color: black
 }
+
+#tray {
+  background: gray
+}
+
+#idle_inhibitor,
+#network,
+#power-profiles-daemon
+{
+padding-right: 2px
+}
